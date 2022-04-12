@@ -1,7 +1,8 @@
 .text
 .global_start
 _start:
-
+	MOV r0, #1
+	MOV r1, r0
 
 
 
