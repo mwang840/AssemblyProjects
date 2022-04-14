@@ -8,7 +8,8 @@ LOOP:
       B LOOP
       ADD r1, r1, r0
       ADD R0, R0, #1		
-
+      BEQ EXIT
+	
 EXIT: MOV r0,#0
       MOV r8,#93
       SVC #0
