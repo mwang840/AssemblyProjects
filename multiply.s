@@ -1,5 +1,5 @@
 .text
-.global_start
+.global _start
 _start:
 	MOV r0, #1
 	MOV r1, r0
