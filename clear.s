@@ -16,6 +16,12 @@ _start:
         blt _start_exit
 
         #initializes outer loop
-  LOOP: mov r1 0
+  LOOP: mov r1 #0
+        cmp #8
+        ADD r1 #1
+  
+        #initializes inner loop
+  LOOP: mov r2 #0
+        cmp #8
         
 
