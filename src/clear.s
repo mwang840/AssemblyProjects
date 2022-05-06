@@ -26,6 +26,7 @@ _start:
         mov r1 r1
         mov r2 r2
         b1 setPixel
-        
+        ADD r2 #1
+
         b1 closefb
 
