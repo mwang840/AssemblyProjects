@@ -23,6 +23,9 @@ _start:
         #initializes inner loop
   LOOP: mov r2 #0
         cmp #8
+        mov r1 r1
+        mov r2 r2
         b1 setPixel
         
+        b1 closefb
 
