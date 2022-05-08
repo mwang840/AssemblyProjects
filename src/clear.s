@@ -16,17 +16,15 @@ _start:
         blt _start_exit
 
         #initializes outer loop
-  LOOP: mov r1 #0
-        cmp #8
-        ADD r1 #1
+  LOOP: mov r1, #0
+        cmp r1, #8
+        ADD r1, #1
   
         #initializes inner loop
-  LOOP: mov r2 #0
-        cmp #8
-        mov r1 r1
-        mov r2 r2
+  LOOP: mov r2, #0
+        cmp r2, #8
         b1 setPixel
-        ADD r2 #1
+        ADD r2, #1
 
         b1 closefb
 

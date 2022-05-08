@@ -25,7 +25,7 @@ _start:
         cmp #8
         mov r1 r1
         mov r2 r2
-        b1 setPixel
+        b1 getColor
         ADD r2 #1
 
         b1 closefb
