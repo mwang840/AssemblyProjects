@@ -11,14 +11,15 @@
 _start:
         #open frame buffer 1
         mov r0,#1
+        mov r1, #0
+        mov r2, #0
         bl openfb
         cmp r0,#0
         blt _start_exit
 
         #initializes outer loop
-  LOOP: mov r1, #0
+  LOOP: ADD r1, #1
         cmp r1, #8
-        ADD r1, #1
   
         #initializes inner loop
   LOOP: mov r2, #0
