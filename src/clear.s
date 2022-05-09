@@ -18,11 +18,11 @@ _start:
         blt _start_exit
 
         #initializes outer loop
-  LOOP: ADD r1, #1
+  OUTERLOOP: ADD r1, #1
         cmp r1, #8
   
         #initializes inner loop
-  LOOP1: mov r2, #0
+  INNERLOOP: mov r2, #0
         cmp r2, #8
         b1 setPixel
         ADD r2, #1
