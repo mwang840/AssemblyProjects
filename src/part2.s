@@ -25,8 +25,8 @@ _start:
         cmp #8
         mov r1 r1
         mov r2 r2
-        b1 getColor
+        bl getColor
         ADD r2 #1
 
-        b1 closefb
+        bl closefb
 
