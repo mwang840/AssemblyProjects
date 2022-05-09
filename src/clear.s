@@ -22,7 +22,7 @@ _start:
         cmp r1, #8
   
         #initializes inner loop
-  LOOP: mov r2, #0
+  LOOP1: mov r2, #0
         cmp r2, #8
         b1 setPixel
         ADD r2, #1
