@@ -29,4 +29,7 @@ _start:
         ADD r2, #1
 
         bl closefb
+_start_exit:
+    mov r7,#1
+	svc #0
 
