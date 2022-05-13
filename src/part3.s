@@ -9,4 +9,16 @@
 .global setPixel
 .text
 
-openfb:	ldr r8,=FILENAME
+#Opens Frame buffer 1
+_start:
+	mov r0,#1
+	bl openfb
+	cmp r0,#0
+	blt _start_exit
+#Gets the color red and store it in r6
+	mov r8,r0
+	mov r0, #31
+	mov r1, #0
+	mov r2, #0
+	bl getColor
+	mov r6, r0
