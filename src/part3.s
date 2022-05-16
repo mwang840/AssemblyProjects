@@ -12,6 +12,8 @@
 #Opens Frame buffer 1
 _start:
 	mov r0,#1
+	mov r3, #0
+	mov r4, #0
 	bl openfb
 	cmp r0,#0
 	blt _start_exit
@@ -22,3 +24,9 @@ _start:
 	mov r2, #0
 	bl getColor
 	mov r6, r0
+
+#Loops and puts color red to make the x on the screen
+	LOOP: ADD r3, #1
+		mov r2, r6
+		mov r3, r6
+		bl setPixel
