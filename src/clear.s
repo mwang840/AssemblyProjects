@@ -33,9 +33,12 @@ _start:
         b INNERLOOP
         #initializes outer loop
   OUTERLOOP: 
-        ADD r1, #1
-        cmp r1, #8
-  
+        cmp r0, #8
+        beq _start_exit
+        ADD r10, #1
+        mov r1,#0
+        mov r9, #0
+        b INNERLOOP
         #initializes inner loop
   INNERLOOP:
         cmp r2, #8
