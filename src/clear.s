@@ -48,6 +48,8 @@ _start:
         ADD r9, #1
         mov r1, r9
         b INNERLOOP
+    
+        bl closefb
 
 _start_exit:
     mov r7,#1
