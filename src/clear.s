@@ -39,13 +39,16 @@ _start:
         mov r1,#0
         mov r9, #0
         b INNERLOOP
-        #initializes inner loop
+        #initializes inner loop and calls the outer after each iteration
   INNERLOOP:
-        cmp r2, #8
+        cmp r1, #8
+        beq OUTERLOOP
         bl setPixel
-        ADD r2, #1
+        mov r0, r10
+        ADD r9, #1
+        mov r1, r9
+        b INNERLOOP
 
-        bl closefb
 _start_exit:
     mov r7,#1
 	svc #0
