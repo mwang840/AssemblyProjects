@@ -27,7 +27,7 @@ _start:
         #sets up the variables for the loop
         mov r0, #0
         mov r1, #0
-        mov r2, #0
+        mov r2, r6
         mov r9, #0
         mov r10, #0
         b INNERLOOP
