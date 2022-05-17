@@ -58,7 +58,7 @@ LEFTLOOP: ADD r3,r3, #1
 	bl setPixel
 
 
-RIGHTLOOP: ADD r4,r4 #1
+RIGHTLOOP: ADD r4,r4, #1
 	#set each pixel in one row only the y val is changing for the second part of the M
 	mov r0, #7
 	mov r1, r4
