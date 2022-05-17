@@ -23,13 +23,20 @@ _start:
 	mov r10, #8
 	mov r11, #8
 
-#Loops and puts color red to make the x on the screen
-	LOOP: ADD r3, #1
-		mov r2, r6
-		mov r3, r6
-		bl setPixel
-	bl closefb
+#Loops and puts color red to make the x on the screen (nested via subtracting)
+OUTERLOOP: sub r10, r10, #1 
+		   sub r11, r11, #1
+		   mov r0, r10
+		   mov r1, r11
+		   mov r2, r6
+		   bl setPixel
+		   cmp r10, #0
+		   bgt OUTERLOOP
+		
+		   mov r10, #8
+		   mov r11, #0
 
 _start_exit:
+	#clean exit
     mov r7,#1
 	svc #0
