@@ -32,3 +32,6 @@ _start:
 		bl setPixel
 	bl closefb
 
+_start_exit:
+    mov r7,#1
+	svc #0

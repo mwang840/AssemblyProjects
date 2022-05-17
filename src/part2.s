@@ -1,13 +1,4 @@
 .global _start
-.data
-	FILENAME: .asciz "/dev/fb1"
-	FD: .word 0
-	FB: .word 0
-	
-.global openfb
-.global closefb
-.global getColor
-.global setPixel
 .text
 _start:
         #open frame buffer 1
@@ -16,20 +7,31 @@ _start:
         cmp r0,#0
         blt _start_exit
 
-        #initializes outer loop
-  OUTERLOOP: mov r1, #0
-        cmp r1, #8
-        ADD r1, #1
-  
-        #initializes inner loop
-  INNERLOOP: mov r2, #0
-        cmp r2, #8
-        mov r1, r1
-        mov r2, r2
+        #get the color blue and store it in r6
+        mov r0,#0
+        mov r1,#0
+        mov r2,#31
         bl getColor
-        ADD r2, #1
+        mov r6,r0
+        mov r9,#8
 
+L1:     sub r9,r9,#1
+        mov r10,#8
+
+L2:     sub r10,r10,#1
+        mov r0,r9
+        mov r1,r10
+        mov r2,r6
+        bl setPixel
+        cmp r10,#0
+        bge L2
+        cmp r9,#0
+        bgt L1
+
+        #cleanup the data structures created by openfb and close the framebuffer device
         bl closefb
+
 _start_exit:
-    mov r7,#1
-	svc #0
+        #clean exit
+        mov r7,#1
+        svc #0
