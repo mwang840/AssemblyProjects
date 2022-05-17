@@ -35,7 +35,19 @@ OUTERLOOP: sub r10, r10, #1
 		
 		   mov r10, #8
 		   mov r11, #0
+#Inner loop but with a twist always store register 2 in register 6
+INNERLOOP: sub r10, r10, #1
+		   mov r0, r10
+		   mov r1, r11
+		   mov r2, r6
+		   bl setPixel
+		   add r11, r11, #1
+		   cmp r10, #0
+		   bgt INNERLOOP
 
+		   #clean up fb here
+		   bl closefb
+		
 _start_exit:
 	#clean exit
     mov r7,#1
