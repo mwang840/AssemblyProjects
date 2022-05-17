@@ -35,6 +35,7 @@ OUTERLOOP: sub r10, r10, #1
 		
 		   mov r10, #8
 		   mov r11, #0
+
 #Inner loop but with a twist always store register 2 in register 6
 INNERLOOP: sub r10, r10, #1
 		   mov r0, r10
