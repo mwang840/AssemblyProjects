@@ -30,3 +30,5 @@ _start:
 		mov r2, r6
 		mov r3, r6
 		bl setPixel
+	bl closefb
+
