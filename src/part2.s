@@ -24,7 +24,7 @@ L2:     sub r10,r10,#1
         mov r2,r6
         bl setPixel
         cmp r10,#0
-        bge L2
+        bgt L2
         cmp r9,#0
         bgt L1
 

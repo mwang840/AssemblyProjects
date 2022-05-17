@@ -1,6 +1,9 @@
 .global _start
 .text
-
+.data
+	FILENAME: .asciz "/dev/fb1"
+	FD: .word 0
+	FB: .word 0
 .global openfb
 .global closefb
 .global getColor
@@ -27,8 +30,9 @@ LEFTLOOP: ADD r3, #1
 	mov r0, #0
 	mov r1, r3
 	bl setPixel
-
-
+	bgt LEFTLOOP
+	
+	#set pixel 1,2 to be purple
 
 
 
@@ -38,7 +42,8 @@ RIGHTLOOP: ADD r3, #1
 	mov r0, #7
 	mov r1, r3
 	bl setPixel
-
+	bgt RIGHTLOOP
+	
 	bl closefb
 
 _start_exit:
