@@ -56,7 +56,7 @@ LEFTLOOP: ADD r3,r3, #1
 	mov r0,#4
 	mov r1,#4
 	bl setPixel
-
+	bl closefb
 
 RIGHTLOOP: ADD r4,r4, #1
 	#set each pixel in one row only the y val is changing for the second part of the M
