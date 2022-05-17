@@ -36,14 +36,24 @@ LEFTLOOP: ADD r3,r3, #1
 	bl setPixel
 	bgt LEFTLOOP
 	
-	#set pixel 1,2 to be purple
+	#set pixel 1,1 to be purple
 	mov r2,r6
 	mov r0,#1
+	mov r1,#1
+	bl setPixel
+	#set pixel 2, 2 to be purple
+	mov r2,r6
+	mov r0,#2
 	mov r1,#2
 	bl setPixel
-	#set pixel 3, 4 to be purple
+	#set pixel 3, 3 to be purple
 	mov r2,r6
 	mov r0,#3
+	mov r1,#3
+	bl setPixel
+	#set pixel 4, 4 to be purple
+	mov r2,r6
+	mov r0,#4
 	mov r1,#4
 	bl setPixel
 
