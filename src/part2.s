@@ -35,3 +35,4 @@ _start_exit:
         #clean exit
         mov r7,#1
         svc #0
+
