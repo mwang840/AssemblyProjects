@@ -27,7 +27,7 @@ _start:
 
 	
 
-LOOP1: ADD r9,r9, #1
+LOOP1: add r9,r9, #1
 	#set each pixel in one row only the y val is changing for the first part of the M
 	mov r0, #0
 	mov r1, r9
@@ -67,7 +67,7 @@ LOOP1: ADD r9,r9, #1
 	mov r1,#1
 	bl setPixel
 
-LOOP2: ADD r10,r10, #1
+LOOP2: add r10,r10, #1
 	#set each pixel in one row only the y val is changing for the second part of the M
 	mov r0, #7
 	mov r1, r10
