@@ -1,5 +1,4 @@
 .global _start
-.text
 .data
 	FILENAME: .asciz "/dev/fb1"
 	FD: .word 0
