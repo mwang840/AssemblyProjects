@@ -1,7 +1,7 @@
 .global _start
 .text
 .data
-	FILENAME: .asciz "/dev/fb1"
+	FILENAME: .asciz "/dev/fb0"
 	FD: .word 0
 	FB: .word 0
 .global openfb
