@@ -35,7 +35,7 @@ LOOP1: ADD r3,r3, #1
 	mov r2, r6
 	bl setPixel
 	cmp r3, #7
-	bg LOOP1
+	blt LOOP1
 	
 	#set pixel 1,1 to be purple
 	mov r2,r6
@@ -80,7 +80,7 @@ LOOP2: ADD r4,r4, #1
 	mov r2, r6
 	bl setPixel
 	cmp r4, #7
-	b LOOP2
+	blt LOOP2
 	
 	bl closefb
 
