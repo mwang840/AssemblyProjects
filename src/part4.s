@@ -19,9 +19,9 @@ _start:
 
 	#gets the color purple and store it in r6
 	mov r8, r0
-	mov r0, #27
-	mov r1, #20
-	mov r2, #27
+	mov r0, #31
+	mov r1, #0
+	mov r2, #31
 	bl getColor
 	mov r9, #0
 	mov r10, #0
