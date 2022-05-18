@@ -1,7 +1,7 @@
 .global _start
 .text
 .data
-	FILENAME: .asciz "/dev/fb0"
+	FILENAME: .asciz "/dev/fb1"
 	FD: .word 0
 	FB: .word 0
 .global openfb
@@ -23,18 +23,18 @@ _start:
 	mov r1, #20
 	mov r2, #27
 	bl getColor
-	mov r3, #0
-	mov r4, #0
+	mov r9, #0
+	mov r10, #0
 
 	
 
-LOOP1: ADD r3,r3, #1
+LOOP1: ADD r9,r9, #1
 	#set each pixel in one row only the y val is changing for the first part of the M
 	mov r0, #0
-	mov r1, r3
+	mov r1, r9
 	mov r2, r6
 	bl setPixel
-	cmp r3, #7
+	cmp r9, #7
 	blt LOOP1
 	
 	#set pixel 1,1 to be purple
@@ -67,19 +67,14 @@ LOOP1: ADD r3,r3, #1
 	mov r0,#6
 	mov r1,#1
 	bl setPixel
-	#set pixel 5, 4 to be purple
-	mov r2,r6
-	mov r0,#5
-	mov r1,#4
-	bl setPixel
 
-LOOP2: ADD r4,r4, #1
+LOOP2: ADD r10,r10, #1
 	#set each pixel in one row only the y val is changing for the second part of the M
 	mov r0, #7
-	mov r1, r4
+	mov r1, r10
 	mov r2, r6
 	bl setPixel
-	cmp r4, #7
+	cmp r10, #7
 	blt LOOP2
 	
 	bl closefb
