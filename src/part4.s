@@ -28,13 +28,14 @@ _start:
 
 	
 
-LEFTLOOP: ADD r3,r3, #1
+LOOP1: ADD r3,r3, #1
 	#set each pixel in one row only the y val is changing for the first part of the M
 	mov r0, #0
 	mov r1, r3
 	mov r2, r6
 	bl setPixel
-	bgt LEFTLOOP
+	cmp r3, #7
+	bg LOOP1
 	
 	#set pixel 1,1 to be purple
 	mov r2,r6
@@ -75,13 +76,14 @@ LEFTLOOP: ADD r3,r3, #1
 	#closes the frame buffer
 	bl closefb
 
-RIGHTLOOP: ADD r4,r4, #1
+LOOP2: ADD r4,r4, #1
 	#set each pixel in one row only the y val is changing for the second part of the M
 	mov r0, #7
 	mov r1, r4
 	mov r2, r6
 	bl setPixel
-	bgt RIGHTLOOP
+	cmp r4, #7
+	b LOOP2
 	
 	bl closefb
 
