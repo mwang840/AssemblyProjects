@@ -1,2 +1,6 @@
 # AssemblyProjects
-Will be performing Assembly language on projects with the raspberry pi from cisc-210
+<h1>A set of multiple **NASM/Assembly Language** programs that displays simple/basic images on to the Pi's sense hat. Learning Assembly and Machine Language was a bit of a hassle for me but was able to test out my knowledge via a pi project. <h1>
+<h2>The assembly scripts can do various things including: <h2>
+<ol>
+    <li>Red X</li>
+</ol>
